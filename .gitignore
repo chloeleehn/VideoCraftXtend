@@ -1,4 +1,5 @@
 VideoCrafter/checkpoints/base_512_v2
-VideoCrafter/ECCV2022-RIFE
+VideoCrafter/ECCV2022-RIFE/train_log
+VideoCrafter/ECCV2022-RIFE/train_log0
 VideoCrafter/VBench
 VideoCrafter/uvq
