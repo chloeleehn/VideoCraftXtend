@@ -1,6 +1,6 @@
-## *** VideoCraftXtend: AI-Enhanced Text-to-Video Generation with Extended Length and Enhanced Motion Smoothness ***
+## VideoCraftXtend: AI-Enhanced Text-to-Video Generation with Extended Length and Enhanced Motion Smoothness
 
-<a href='https://huggingface.co/spaces/ychenhq/VideoCrafterXen'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-blue'></a>
+<a href='https://huggingface.co/spaces/ychenhq/VideoCrafterXtend'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-blue'></a>
 
 ------
  
@@ -12,24 +12,28 @@ This project aims to tackle challenges in T2V generation, specifically focusing 
 Click the GIF to access the high-resolution video.
 
 <table class="center">
-  <td><a href="https://github.com/AILab-CVC/VideoCrafter/assets/18735168/d20ee09d-fc32-44a8-9e9a-f12f44b30411"><img src=assets/t2v/tom.gif width="320"></td>
-  <td><a href="https://github.com/AILab-CVC/VideoCrafter/assets/18735168/f1d9f434-28e8-44f6-a9b8-cffd67e4574d"><img src=assets/t2v/child.gif width="320"></td>
-  <td><a href="https://github.com/AILab-CVC/VideoCrafter/assets/18735168/bbcfef0e-d8fb-4850-adc0-d8f937c2fa36"><img src=assets/t2v/woman.gif width="320"></td>
+  <td>
+  <video width="320" controls>
+    <source src="https://github.com/chloeleehn/VideoCraftXtend/blob/main/VideoCrafter/results/cat/0001.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  </td>
+  <td>
+  <video width="320" controls>
+    <source src="https://github.com/chloeleehn/VideoCraftXtend/blob/main/VideoCrafter/results/cat/0002.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  </td>
+  <td>
+  <video width="320" controls>
+    <source src="https://github.com/chloeleehn/VideoCraftXtend/blob/main/VideoCrafter/results/cat/0003.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  </td>
   <tr>
-  <td style="text-align:center;" width="320">"Tom Cruise's face reflects focus, his eyes filled with purpose and drive."</td>
-  <td style="text-align:center;" width="320">"A child excitedly swings on a rusty swing set, laughter filling the air."</td>
-  <td style="text-align:center;" width="320">"A young woman with glasses is jogging in the park wearing a pink headband."</td>
-  <tr>
-</table >
-
-<table class="center">
-  <td><a href="https://github.com/AILab-CVC/VideoCrafter/assets/18735168/7edafc5a-750e-45f3-a46e-b593751a4b12"><img src=assets/t2v/couple.gif width="320"></td>
-  <td><a href="https://github.com/AILab-CVC/VideoCrafter/assets/18735168/37fe41c8-31fb-4e77-bcf9-fa159baa6d86"><img src=assets/t2v/rabbit.gif width="320"></td>
-  <td><a href="https://github.com/AILab-CVC/VideoCrafter/assets/18735168/09791a46-a243-41b8-a6bb-892cdd3a83a2"><img src=assets/t2v/duck.gif width="320"></td>
-  <tr>
-  <td style="text-align:center;" width="320">"With the style of van gogh, A young couple dances under the moonlight by the lake."</td>
-  <td style="text-align:center;" width="320">"A rabbit, low-poly game art style"</td>
-  <td style="text-align:center;" width="320">"Impressionist style, a yellow rubber duck floating on the wave on the sunset"</td>
+  <td style="text-align:center;" width="320">"There is a cat dancing on the sand."</td>
+  <td style="text-align:center;" width="320">"Behold the mesmerizing sight of a cat elegantly dancing amidst the soft grains of sand."</td>
+  <td style="text-align:center;" width="320">"The fluffy cat is joyfully prancing and twirling on the soft golden sand, its elegant movements mirroring the peaceful seaside setting."</td>
   <tr>
 </table >
 
