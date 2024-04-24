@@ -1,0 +1,3 @@
+[submodule "VideoCrafter/VBench"]
+	path = VideoCrafter/VBench
+	url = https://github.com/Vchitect/VBench.git

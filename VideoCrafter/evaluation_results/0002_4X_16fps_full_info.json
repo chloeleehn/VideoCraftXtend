@@ -1,0 +1,13 @@
+[
+    {
+        "prompt_en": [
+            "//content/drive/MyDrive/FYP/Code/VideoCrafter/results/cat/0002_4X_16fps"
+        ],
+        "dimension": [
+            "motion_smoothness"
+        ],
+        "video_list": [
+            "//content/drive/MyDrive/FYP/Code/VideoCrafter/results/cat/0002_4X_16fps.mp4"
+        ]
+    }
+]
