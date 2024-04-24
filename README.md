@@ -1,7 +1,8 @@
 ## VideoCraftXtend: AI-Enhanced Text-to-Video Generation with Extended Length and Enhanced Motion Smoothness
 
 Check our online demo here: <a href='https://huggingface.co/spaces/ychenhq/VideoCrafterXtend'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-blue'></a>
-GitHub page: <a href='https://github.com/chloeleehn/VideoCraftXtend'>
+
+Our GitHub page: [VideoCraftXtend](https://github.com/chloeleehn/VideoCraftXtend)
  
 ## Introduction
 VideoCraftXtend is an open-source video generation and editing toolbox for crafting video content.
