@@ -1,7 +1,8 @@
 ## VideoCraftXtend: AI-Enhanced Text-to-Video Generation with Extended Length and Enhanced Motion Smoothness
 
-Check our online demo here 👇
-<a href='https://huggingface.co/spaces/ychenhq/VideoCrafterXtend'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-blue'></a>
+Check our online demo here: <a href='https://huggingface.co/spaces/ychenhq/VideoCrafterXtend'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-blue'></a>
+
+Our GitHub page: [VideoCraftXtend](https://github.com/chloeleehn/VideoCraftXtend)
  
 ## Introduction
 VideoCraftXtend is an open-source video generation and editing toolbox for crafting video content.
@@ -53,17 +54,18 @@ Click on the text to access the video.
 
 
 ## 📋 Techinical Report
-😉 VideoCrafter2 Tech report: [VideoCrafter2: Overcoming Data Limitations for High-Quality Video Diffusion Models](https://arxiv.org/abs/2401.09047)
+[VideoCraftXtend: AI-Enhanced Text-to-Video Generation with Extended Length and Enhanced Motion Smoothness](https://github.com/chloeleehn/VideoCraftXtend/blob/main/VideoCraftXtend_report.pdf)
 
 
 
-## 🤗 Acknowledgements
+## Acknowledgements
 Our codebase builds on 
 1) [Stable Diffusion](https://github.com/Stability-AI/stablediffusion)
 2) [VideoCrafter2](https://github.com/AILab-CVC/VideoCrafter)
 3) [UVQ](https://github.com/google/uvq)
 4) [VBench](https://github.com/Vchitect/VBench)
 5) [RIFE](https://github.com/hzwer/ECCV2022-RIFE)
+
 Thanks the authors for sharing their codebases! 
 
 
