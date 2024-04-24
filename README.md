@@ -1,32 +1,12 @@
----
-title: VideoCrafter
-app_file: gradio_app.py
-sdk: gradio
-sdk_version: 4.27.0
----
+## *** VideoCraftXtend: AI-Enhanced Text-to-Video Generation with Extended Length and Enhanced Motion Smoothness ***
 
-## ___***VideoCrafter2: Overcoming Data Limitations for High-Quality Video Diffusion Models***___
-
-<a href='https://ailab-cvc.github.io/videocrafter2/'><img src='https://img.shields.io/badge/Project-Page-green'></a> 
-<a href='https://arxiv.org/abs/2401.09047'><img src='https://img.shields.io/badge/Technique-Report-red'></a> 
-[![Discord](https://dcbadge.vercel.app/api/server/rrayYqZ4tf?style=flat)](https://discord.gg/rrayYqZ4tf)
-<a href='https://huggingface.co/spaces/VideoCrafter/VideoCrafter2'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-blue'></a>
-[![GitHub](https://img.shields.io/github/stars/VideoCrafter/VideoCrafter?style=social)](https://github.com/VideoCrafter/VideoCrafter)
-
-
-### 🔥🔥 The VideoCrafter2 Large improvements over VideoCrafter1 with limited data. Better Motion, Better Concept Combination!!!
-
-
-Please Join us and create your own film on [Discord/Floor33](https://discord.gg/rrayYqZ4tf).
+<a href='https://huggingface.co/spaces/ychenhq/VideoCrafterXen'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-blue'></a>
 
 ------
-### 🎥 Exquisite film, produced by VideoCrafter2, directed by Human
- [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/TUsFkW0tK-s/0.jpg)](https://www.youtube.com/watch?v=TUsFkW0tK-s)
  
-## 🔆 Introduction
-
-🤗🤗🤗 VideoCrafter is an open-source video generation and editing toolbox for crafting video content.   
-It currently includes the Text2Video and Image2Video models:
+## Introduction
+VideoCraftXtend is an open-source video generation and editing toolbox for crafting video content.
+This project aims to tackle challenges in T2V generation, specifically focusing on the production of long videos, enhancing motion smoothness quality and improving content diversity. We propose a comprehensive framework that integrates a T2V diffusion model, utilizes the OpenAI GPT API, incorporates a Video Quality Assessment (VQA) model, and refines an Interpolation model. 
 
 ### 1. Generic Text-to-video Generation
 Click the GIF to access the high-resolution video.
@@ -53,144 +33,45 @@ Click the GIF to access the high-resolution video.
   <tr>
 </table >
 
-### 2. Generic Image-to-video Generation
-
-<table class="center">
-  <td><img src=assets/i2v/input/blackswan.png width="170"></td>
-  <td><img src=assets/i2v/input/horse.png width="170"></td>
-  <td><img src=assets/i2v/input/chair.png width="170"></td>
-  <td><img src=assets/i2v/input/sunset.png width="170"></td>
-  <tr>
-  <td><a href="https://github.com/AILab-CVC/VideoCrafter/assets/18735168/1a57edd9-3fd2-4ce9-8313-89aca95b6ec7"><img src=assets/i2v/blackswan.gif width="170"></td>
-  <td><a href="https://github.com/AILab-CVC/VideoCrafter/assets/18735168/d671419d-ae49-4889-807e-b841aef60e8a"><img src=assets/i2v/horse.gif width="170"></td>
-  <td><a href="https://github.com/AILab-CVC/VideoCrafter/assets/18735168/39d730d9-7b47-4132-bdae-4d18f3e651ee"><img src=assets/i2v/chair.gif width="170"></td>
-  <td><a href="https://github.com/AILab-CVC/VideoCrafter/assets/18735168/dc8dd0d5-a80d-4f31-94db-f9ea0b13172b"><img src=assets/i2v/sunset.gif width="170"></td>
-  <tr>
-  <td style="text-align:center;" width="170">"a black swan swims on the pond"</td>
-  <td style="text-align:center;" width="170">"a girl is riding a horse fast on grassland"</td>
-  <td style="text-align:center;" width="170">"a boy sits on a chair facing the sea"</td>
-  <td style="text-align:center;" width="170">"two galleons moving in the wind at sunset"</td>
-
-</table >
-
-
----
-
-## 📝 Changelog
-- __[2024.01.18]__: 🔥🔥 Release the [VideoCrafter2](https://ailab-cvc.github.io/videocrafter2/) and [Tech Report](https://arxiv.org/abs/2401.09047)!
-
-- __[2023.10.30]__: Release [VideoCrafter1](https://arxiv.org/abs/2310.19512) Technical Report!
-
-- __[2023.10.13]__: 🔥🔥 Release the VideoCrafter1, High Quality Video Generation!
-
-- __[2023.08.14]__: Release a new version of VideoCrafter on [Discord/Floor33](https://discord.gg/uHaQuThT). Please join us to create your own film!
-
-- __[2023.04.18]__: Release a VideoControl model with most of the watermarks removed!
-
-- __[2023.04.05]__: Release pretrained Text-to-Video models, VideoLora models, and inference code.
-<br>
-
-
-## ⏳ Models
-
-|T2V-Models|Resolution|Checkpoints|
-|:---------|:---------|:--------|
-|VideoCrafter2|320x512|[Hugging Face](https://huggingface.co/VideoCrafter/VideoCrafter2/blob/main/model.ckpt)
-|VideoCrafter1|576x1024|[Hugging Face](https://huggingface.co/VideoCrafter/Text2Video-1024/blob/main/model.ckpt)
-|VideoCrafter1|320x512|[Hugging Face](https://huggingface.co/VideoCrafter/Text2Video-512/blob/main/model.ckpt)
-
-|I2V-Models|Resolution|Checkpoints|
-|:---------|:---------|:--------|
-|VideoCrafter1|320x512|[Hugging Face](https://huggingface.co/VideoCrafter/Image2Video-512/blob/main/model.ckpt)
-
-
 
 ## ⚙️ Setup
 
-### 1. Install Environment via Anaconda (Recommended)
-```bash
-conda create -n videocrafter python=3.8.5
-conda activate videocrafter
-pip install -r requirements.txt
-```
+### 1. Install Environment
+1) Via Anaconda
+   ```bash
+   conda create -n videocraftxtend python=3.8.5
+   conda activate videocraftxtend
+   pip install -r requirements.txt
+   ```
+2) Using Google Colab Pro
 
+### 2. Download the model checkpoints
+1) Download pretrained T2V models via [Hugging Face](https://huggingface.co/VideoCrafter/VideoCrafter2/blob/main/model.ckpt), and put the `model.ckpt` in `VideoCrafter/checkpoints/base_512_v2/model.ckpt`.
+2) Download pretrained Interpolation models viea [Google Drive](https://drive.google.com/drive/folders/1TBEwF2PmSGyDngP1anjNswlIfwGh2NzU?usp=sharing), and put the `flownet.pkl` in `VideoCrafter/ECCV2022-RIFE/train_log/flownet.pkl`.
 
 ## 💫 Inference 
-### 1. Text-to-Video
+### 1. Text-to-Video local Gradio demo
+1) Open `VideoCraftXtend.ipynb`, run the cells till generating Gradio Interface.
+2) Input prompt, customize the parameters and get the resulting video
+3) The last section of the file is evaluation results been put in our report)
+4) Open the `VideoCraftXtend.ipynb` notebook and run the cells until you reach the point where the Gradio interface is generated.
+5) Once the Gradio interface is generated, you can input prompts and customize the parameters according to your requirements. The resulting video should be generated within an estimated timeframe of 15-20 minutes.
+6) The last section of `VideoCraftXtend.ipynb` contains the evaluation results that were included in our report.
 
-1) Download pretrained T2V models via [Hugging Face](https://huggingface.co/VideoCrafter/VideoCrafter2/blob/main/model.ckpt), and put the `model.ckpt` in `checkpoints/base_512_v2/model.ckpt`.
-2) Input the following commands in terminal.
-```bash
-  sh scripts/run_text2video.sh
-```
-
-### 2. Image-to-Video
-
-1) Download pretrained I2V models via [Hugging Face](https://huggingface.co/VideoCrafter/Image2Video-512-v1.0/blob/main/model.ckpt), and put the `model.ckpt` in `checkpoints/i2v_512_v1/model.ckpt`.
-2) Input the following commands in terminal.
-```bash
-  sh scripts/run_image2video.sh
-```
-
-### 3. Local Gradio demo
-
-1. Download the pretrained T2V and I2V models and put them in the corresponding directory according to the previous guidelines.
-2. Input the following commands in terminal.
-```bash
-  python gradio_app.py
-```
 
 ---
 ## 📋 Techinical Report
 😉 VideoCrafter2 Tech report: [VideoCrafter2: Overcoming Data Limitations for High-Quality Video Diffusion Models](https://arxiv.org/abs/2401.09047)
 
-😉 VideoCrafter1 Tech report: [VideoCrafter1: Open Diffusion Models for High-Quality Video Generation](https://arxiv.org/abs/2310.19512)
-<br>
-
-## 😉 Citation
-The technical report is currently unavailable as it is still in preparation. You can cite the paper of our image-to-video model and related base model.
-```
-@misc{chen2024videocrafter2,
-      title={VideoCrafter2: Overcoming Data Limitations for High-Quality Video Diffusion Models}, 
-      author={Haoxin Chen and Yong Zhang and Xiaodong Cun and Menghan Xia and Xintao Wang and Chao Weng and Ying Shan},
-      year={2024},
-      eprint={2401.09047},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
-}
-
-@misc{chen2023videocrafter1,
-      title={VideoCrafter1: Open Diffusion Models for High-Quality Video Generation}, 
-      author={Haoxin Chen and Menghan Xia and Yingqing He and Yong Zhang and Xiaodong Cun and Shaoshu Yang and Jinbo Xing and Yaofang Liu and Qifeng Chen and Xintao Wang and Chao Weng and Ying Shan},
-      year={2023},
-      eprint={2310.19512},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
-}
-
-@article{xing2023dynamicrafter,
-      title={DynamiCrafter: Animating Open-domain Images with Video Diffusion Priors}, 
-      author={Jinbo Xing and Menghan Xia and Yong Zhang and Haoxin Chen and Xintao Wang and Tien-Tsin Wong and Ying Shan},
-      year={2023},
-      eprint={2310.12190},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
-}
-
-@article{he2022lvdm,
-      title={Latent Video Diffusion Models for High-Fidelity Long Video Generation}, 
-      author={Yingqing He and Tianyu Yang and Yong Zhang and Ying Shan and Qifeng Chen},
-      year={2022},
-      eprint={2211.13221},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
-}
-```
-
 
 ## 🤗 Acknowledgements
-Our codebase builds on [Stable Diffusion](https://github.com/Stability-AI/stablediffusion). 
-Thanks the authors for sharing their awesome codebases! 
+Our codebase builds on 
+1) [Stable Diffusion](https://github.com/Stability-AI/stablediffusion)
+2) [VideoCrafter2](https://github.com/AILab-CVC/VideoCrafter)
+3) [UVQ](https://github.com/google/uvq)
+4) [VBench](https://github.com/Vchitect/VBench)
+5) [RIFE](https://github.com/hzwer/ECCV2022-RIFE)
+Thanks the authors for sharing their codebases! 
 
 
 ## 📢 Disclaimer
