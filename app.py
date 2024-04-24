@@ -13,9 +13,10 @@ import gradio as gr
 import json
 import math
 import requests
+from dotenv import load_dotenv, dotenv_values
+# loading variables from .env file
+load_dotenv()
 
-
-basedir = "https://huggingface.co/spaces/ychenhq/VideoCrafterXen/tree/main"
 vidOut = "results/results"
 uvqOut = "results/modified_prompts_eval"
 evalOut = "evaluation_results"
@@ -30,7 +31,7 @@ def genScore():
     for i in range(1, num_of_vid+1):
         fileindex = f"{i:04d}"
         os.system(
-            f'python3 ./uvq/uvq_main.py --input_files="{fileindex},2,{basedir}/{vidOut}/{fileindex}.mp4" --output_dir {uvqOut} --model_dir ./uvq/models'
+            f'python3 ./uvq/uvq_main.py --input_files="{fileindex},2, {vidOut}/{fileindex}.mp4" --output_dir {uvqOut} --model_dir ./uvq/models'
         )
 
 
@@ -55,7 +56,7 @@ def chooseBestVideo():
         '''We loop thru this current processed video'''
         filedir = f"{i:04d}"
         filename = f"{i:04d}_uvq.csv"
-        with open(os.path.join(basedir, uvqOut, filedir, filename), 'r') as file:
+        with open(os.path.join(uvqOut, filedir, filename), 'r') as file:
             MOS = file.read().strip()
 
         MOS_score = getScore(MOS)
@@ -88,10 +89,10 @@ def extract_scores_from_json(json_path):
 def VBench_eval(vid_filename):
     # vid_filename: video filename without .mp4
     os.system(
-        f'python VBench/evaluate.py --dimension "motion_smoothness"  --videos_path {os.path.join(basedir, vidOut, vid_filename)}.mp4 --custom_input --output_filename {vid_filename}'
+        f'python VBench/evaluate.py --dimension "motion_smoothness"  --videos_path {os.path.join(vidOut, vid_filename)}.mp4 --custom_input --output_filename {vid_filename}'
     )
     eval_file_path = os.path.join(
-        basedir, evalOut, f"{vid_filename}_eval_results.json")
+        evalOut, f"{vid_filename}_eval_results.json")
     motion_score = extract_scores_from_json(eval_file_path)
 
     return motion_score
@@ -99,11 +100,11 @@ def VBench_eval(vid_filename):
 
 def interpolation(chosen_idx, fps):
     vid_filename = f"{chosen_idx:04d}.mp4"
-    os.chdir(f"{basedir}/ECCV2022-RIFE")
+    os.chdir("ECCV2022-RIFE")
     os.system(
-        f'python3 inference_video.py --exp=2 --video={os.path.join(basedir, vidOut, vid_filename)} --fps {fps}'
+        f'python3 inference_video.py --exp=2 --video={os.path.join(vidOut, vid_filename)} --fps {fps}'
     )
-    os.chdir(f"{basedir}")
+    os.chdir("../")
     out_name = f"{chosen_idx:04d}_4X_{fps}fps.mp4"
     return out_name
 
@@ -111,7 +112,7 @@ def interpolation(chosen_idx, fps):
 
 
 def call_gpt_api(prompt, isSentence=False):
-    api_key = "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"
+    api_key = os.getenv("MY_GPT_KEY")
 
     response = requests.post(
         'https://api.openai.com/v1/chat/completions',
@@ -140,7 +141,7 @@ def call_gpt_api(prompt, isSentence=False):
 
 # Initialize Firebase Admin SDK
 cred = credentials.Certificate(
-    f"{basedir}/final-year-project-443dd-df6f48af0796.json")
+    "final-year-project-443dd-df6f48af0796.json")
 firebase_admin.initialize_app(cred)
 # Initialize Firestore client
 db = firestore.client()
@@ -196,19 +197,19 @@ def generate_output(input_text, output_video_1, fps, examples):
         output = call_gpt_api(
             prompt=f"Generate 2 similar prompts and add some reasonable words to the given prompt and not change the meaning, each within 30 words: {input_text}", isSentence=True)
         output.append(input_text)
-        with open(f"{basedir}/prompts/test_prompts.txt", 'w') as file:
+        with open("prompts/test_prompts.txt", 'w') as file:
             for i, sentence in enumerate(output):
                 if i < len(output) - 1:
                     file.write(sentence + '\n')
                 else:
                     file.write(sentence)
         os.system(
-            f'sh {os.path.join(basedir, "scripts", "run_text2video.sh")}')
+            f'sh {os.path.join("scripts", "run_text2video.sh")}')
         # Connect the video output and return the video corresponding link
         genScore()
         chosen_idx = chooseBestVideo()
         chosen_vid_path = interpolation(chosen_idx, fps)
-        chosen_vid_path = f"{basedir}/{vidOut}/{chosen_vid_path}"
+        chosen_vid_path = f"{vidOut}/{chosen_vid_path}"
         output_video_1 = gr.Video(
             value=chosen_vid_path, show_download_button=True)
 
@@ -278,7 +279,7 @@ def t2v_demo(result_dir='./tmp/'):
                         with gr.Tab(label='Result'):
                             with gr.Row():
                                 output_video_1 = gr.Video(
-                                    value=f"{basedir}/sample/0009.mp4", show_download_button=True)
+                                    value="sample/0009.mp4", show_download_button=True)
 
             video_len.change(update_fps, inputs=[video_len, fps], outputs=fps)
             # fps.change(update_video_len_slider, inputs = fps, outputs = video_len)
